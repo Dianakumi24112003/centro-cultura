@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Menu from './components/Menu';
+import Header from './components/Header';
+import Carousel from './components/Carousel';
+import Buttons from './components/Buttons';
+import Multimedia from './components/Multimedia';
+import Form from './components/Form';
+import Credits from './components/Credits';
+import EventsGallery from './components/EventsGallery';
+import CulturalBlog from './components/CulturalBlog';
+import CulturalResources from './components/CulturalResources';
+import CollaborativeProjects from './components/CollaborativeProjects';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Menu />
+        <Routes>
+          <Route path="/header" element={<Header />} />
+          <Route path="/carousel" element={<Carousel />} />
+          <Route path="/buttons" element={<Buttons />} />
+          <Route path="/multimedia" element={<Multimedia />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/credits" element={<Credits />} />
+          <Route path="/events-gallery" element={<EventsGallery />} />
+          <Route path="/cultural-blog" element={<CulturalBlog />} />
+          <Route path="/cultural-resources" element={<CulturalResources />} />
+          <Route path="/collaborative-projects" element={<CollaborativeProjects />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
